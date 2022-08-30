@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/food.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
-    <title>Lesson - 42</title>
+    <title>Menu</title>
 </head>
 <body>
-    <div class="container body__container">
-        <form class="button-wrapper">
-            <button onclick="www()" id="btns">Shake</button>
-            <button onclick="vvv()" id="btns1">Breakfast</button>
-            <button onclick="fff()" id="btns2">Launch</button>
-        </form>
+    <h1 class="visually-hidden">Our restaurant</h1>
+    <div class="container menu-wrapper">
+        <h2 class="title">Menu:</h2>
+        <div class="button-wrapper">
+            <button id="shake" class="custom-btn">Shakes</button>
+            <button id="breakfast" class="custom-btn">Breakfasts</button>
+            <button id="lunch" class="custom-btn">Lunchs</button>
+            <button id="all" class="custom-btn">All</button>
+        </div>
         <ul id="section"></ul>  
     </div>
     <script src="js/main.js"></script>

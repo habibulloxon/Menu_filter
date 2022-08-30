@@ -90,71 +90,58 @@ window.addEventListener("DOMContentLoaded", function () {
     section.innerHTML = displayMenu
 })
 
-const form = document.getElementById("form")
+const allBtn = document.getElementById("all")
+const shakeBtn = document.getElementById("shake")
+const breakfastBtn = document.getElementById("breakfast")
+const lunchBtn = document.getElementById("lunch")
 
-const btn = document.getElementById("btns")
-const btn2 = document.getElementById("btns1")
-const btn1 = document.getElementById("btns2")
-
-
-btn.addEventListener("click", function (e) {
+lunchBtn.addEventListener("click", function (e) {
   e.preventDefault()
-})
-btn2.addEventListener("click", function (e) {
-  e.preventDefault()
-})
-btn1.addEventListener("click", function (e) {
-  e.preventDefault()
-})
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault()
+  section.innerHTML = 
+  menu.filter(item => item.category.toLowerCase() === "lunch").map(item =>
+     `<li>
+          <img src = "${item.img}">
+          <h2>${item.title}</h2>
+          <p>${item.desc}</p>
+          <p>${item.price}</p>
+      </li>`).join('')
 })
 
-const productsForLog = menu.forEach(function (item) {
+breakfastBtn.addEventListener("click", function (e) {
+  e.preventDefault()
+  section.innerHTML = 
+  menu.filter(item => item.category.toLowerCase() === "breakfast").map(item => 
+      `<li>
+          <img src = "${item.img}">
+          <h2>${item.title}</h2>
+          <p>${item.desc}</p>
+          <p>${item.price}</p>
+      </li>`).join('')
+})
 
-}) 
-function www() {
-  menu.filter(function (item) {
-    if (item.category == "shakes") {
-      section.innerHTML =  `
-          <li>
-            <img src = "${item.img}">
-            <h2>${item.title}</h2>
-            <p>${item.desc}</p>
-            <p>${item.price}</p>
-          </li>
-          `
-    }
-  }) 
-}
+shakeBtn.addEventListener("click", function (e) {
+  e.preventDefault()
+  section.innerHTML = 
+  menu.filter(item => item.category.toLowerCase() === "shakes").map(item => 
+      `<li>
+          <img src = "${item.img}">
+          <h2>${item.title}</h2>
+          <p>${item.desc}</p>
+          <p>${item.price}</p>
+      </li>`).join('')
+})
 
-function vvv() {
-  menu.filter(function (item) {
-    if (item.category == "lunch") {
-      section.innerHTML =  `
-          <li>
-            <img src = "${item.img}">
-            <h2>${item.title}</h2>
-            <p>${item.desc}</p>
-            <p>${item.price}</p>
-          </li>
-          `
-    }
-  }) 
-}
-
-function fff() {
-  menu.filter(function (item) {
-    if (item.category == "breakfast") {
-      section.innerHTML =  `
-          <li>
-            <img src = "${item.img}">
-            <h2>${item.title}</h2>
-            <p>${item.desc}</p>
-            <p>${item.price}</p>
-          </li>
-          `
-    }
-  }) 
-}
+allBtn.addEventListener("click", function () {
+  let displayMenu = menu.map(function (item) {
+    return `
+    <li>
+      <img src = "${item.img}">
+      <h2>${item.title}</h2>
+      <p>${item.desc}</p>
+      <p>${item.price}</p>
+    </li>
+    ` 
+})
+displayMenu = displayMenu.join("")
+section.innerHTML = displayMenu
+})
